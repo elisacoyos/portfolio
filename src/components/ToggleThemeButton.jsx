@@ -1,27 +1,21 @@
-// import Switch from '@mui/material/Switch';
-import { useContext } from 'react'
-import { ThemeContext } from '../utils/context/context'
+import Switch from '@mui/material/Switch';
+// import { useContext } from 'react'
+import { ThemeContext } from '../utils/context/ThemeProvider'
+import { useContext } from 'react';
 
-export default function DarkLightSwitch(props) {
+export default function ToggleThemeButton() {
 
-	const { theme, toggleTheme } = useContext(ThemeContext)
+	const { toggleTheme } = useContext(ThemeContext)
 
 	return (
 		<div>
 
-			<button
-				onClick={toggleTheme}
-				className='toggle-theme-btn'>
-
-				<span>go {theme ? "light" : "dark"}</span>
-
-			</button>
-
-
-			{/* <Switch
-				checked={theme === 'dark'}
-				onChange={toggleTheme}
-			/> */}
+             <Switch
+			onClick={toggleTheme}	
+			// checked={ThemeProvider === 'dark'}
+			// onChange={toggleTheme}
+			/>
+				
 		</div>
 	);
 }

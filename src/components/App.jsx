@@ -1,29 +1,31 @@
 import { useEffect } from 'react';
 
-import Header from './Header/Header';
+import Header from './Header';
 import AboutMe from './AboutMe';
 import Skills from './Skills';
 import Projects from './Projects';
 import Contact from './Contact';
-import { ThemeProvider } from '../utils/context/context';
+// import {ThemeProvider} from '../utils/context/ThemeProvider';
 import GlobalStyle from '../style/GlobalStyle';
+import { ThemeContext } from '../utils/context/ThemeProvider';
+import { useContext } from 'react';
 
 export default function App() {
+
+  const { darkMode } = useContext(ThemeContext);
 
   useEffect(() => {
     document.title = `Elisa COYOS`
   }, [])
 
   return (
-    <ThemeProvider>
-      <GlobalStyle  />
-      <div className="App">
+    <div className="App">
+    <GlobalStyle isDarkMode={darkMode}/>
         <Header />
         <AboutMe />
         <Skills />
         <Projects />
         <Contact />
       </div>
-    </ThemeProvider>
   );
 }
