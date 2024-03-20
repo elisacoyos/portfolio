@@ -32,7 +32,7 @@ import bookLogoDark from '../assets/images/logos/book-dark.png';
 const StyledSkills = styled.div`
 margin: 2rem auto;
 padding-top: 120px;
-width: 80%;
+width: 90%;
 max-width: 1440px;
 display: flex;
 flex-direction: column;
@@ -67,7 +67,7 @@ const StyledCard = styled.div`
     transition: 0.3s ease;
         &:hover {
             color: ${colors.bodyDark};
-            background: ${colors.primary};
+			background: ${colors.gradienPrimaryColor};
             transform: translateY(-3px);
 			& h2 {
 				color: ${colors.white};
@@ -103,7 +103,7 @@ function Skills() {
 	// }
 
 	return (
-		<StyledSkills $isDarkMode={darkMode}>
+		<StyledSkills id='skills' $isDarkMode={darkMode}>
 			<h1>Mes compétences</h1>
 
 			<StyledCardsContainer>
@@ -137,8 +137,8 @@ function Skills() {
 					<h3>JavaScript & React Js</h3>
 				</StyledCard>
 			</StyledCardsContainer>
-			<h3 className='parcour'>Mon parcour & expérience</h3>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis sit laboriosam voluptatibus ut nemo qui voluptates placeat eveniet impedit dignissimos earum aut officia voluptas quae commodi quidem cum pariatur odit, aspernatur, praesentium, iure esse inventore nobis. Dolore quaerat facilis iste amet. Porro perferendis temporibus vel ipsum molestiae reiciendis neque exercitationem?</p>
+			{/* <h3 className='parcour'>Mon parcour & expérience</h3>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis sit laboriosam voluptatibus ut nemo qui voluptates placeat eveniet impedit dignissimos earum aut officia voluptas quae commodi quidem cum pariatur odit, aspernatur, praesentium, iure esse inventore nobis. Dolore quaerat facilis iste amet. Porro perferendis temporibus vel ipsum molestiae reiciendis neque exercitationem?</p> */}
 
 		</StyledSkills>
 	);

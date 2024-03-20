@@ -55,7 +55,7 @@ const StyledNav = styled.div`
 			font-weight: 600;
 			transition: 0.5s ease;
 			&:hover {
-				color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyLight : colors.bodyDark};
+				color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDarkNotHover : colors.bodyLightNotHover};
 			}
 			& li {
 				cursor: pointer;
@@ -79,27 +79,31 @@ const StyledNav = styled.div`
 				&:hover {
 				color: ${colors.white};
 				background: ${colors.primary};
-				transform: translateY(-3px);
+				background: ${colors.gradienPrimaryColor};
 	}
+	transform: translateY(-3px);
 	}
     `
 
 const StyledProfilePhoto = styled.img`
-	border: 3px solid lightgray;
+    border: 2px solid lightgray;
 	display: flex;
 	width: 65px;
 	height: 65px;
 	border-radius: 50%;
+	object-fit: cover;	
+	background: ${({ $isDarkMode }) => $isDarkMode ? colors.gradientBoxDark : colors.gradientBoxLight};
+	box-shadow: ${({ $isDarkMode }) => $isDarkMode ? colors.boxShadowDark : colors.boxShadowLight};
 `
 
 const StyledBacToTop = styled.div`
 	position: fixed;
     bottom: 50px;
     right: 50px;
+	z-index: 200;
     ${'' /* cursor: pointer;
 	font-size: 3rem;
 	color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight};
-    z-index: 999;
     width: 50px;
     height: 50px;
     line-height: 46px;
@@ -115,6 +119,7 @@ const StyledBacToTop = styled.div`
     visibility: visible;
 }
 `
+
 
 export default function Header() {
 
@@ -146,26 +151,45 @@ export default function Header() {
 
 <StyledHeader $isDarkMode={darkMode} className={isScrolled ? 'header--scrolled' : ''}>
 	<StyledLogo $isDarkMode={darkMode}>
-		<StyledProfilePhoto src={profilePhoto} alt="logo" />
+	<StyledProfilePhoto src={profilePhoto} alt="logo" $isDarkMode={darkMode} />
 		<h3>Elisa COYOS</h3>
 	</StyledLogo>
 
 	<ToggleThemeButton />
 
 	<StyledNav $isDarkMode={darkMode}>
-		<ul className='header__nav'>
-			<li>Accueil</li>
-			<li>Skills</li>
-			<li>Portfolio</li>
-			<li>Contact</li>
-		</ul>
-		<div className="cv">Télécharger mon CV</div>
-	</StyledNav>
-
+	<ul className='header__nav'>
+						<li>
+						<a href="#accueil" >
+								Accueil
+							</a>
+						</li>
+						<li>
+						<a href="#skills" >
+								Skills
+							</a>
+						</li>
+						<li>
+						<a href="#projects">
+								Projets
+							</a>
+						</li>
+						<li>
+						<a href="#contact" >
+								Contact
+							</a>
+						</li>
+					</ul>
+					<div className="cv">Télécharger mon CV</div>
+				</StyledNav>
+	
 </StyledHeader>
 
 <StyledBacToTop $isDarkMode={darkMode} className={isScrolled ? 'page--scrolled' : ''}>
-	<RoundButton className="symbol" symbol="↑"/>
+<a href="#accueil">
+					<RoundButton className="symbol" symbol="↑" />
+				</a>
+
 </StyledBacToTop>
 </>
 );

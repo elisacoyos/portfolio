@@ -10,7 +10,7 @@ import projectsData from '../assets/datas/projectsData.json';
 const StyledProjects = styled.div`
 	margin: 2rem auto;
 	padding-top: 120px;
-	width: 80%;
+	width: 90%;
 	max-width: 1440px;
 	display: flex;
 	flex-direction: column;
@@ -36,7 +36,7 @@ export default function Projects() {
 	const { darkMode } = useContext(ThemeContext);
 
 	return (
-		<StyledProjects $isDarkMode={darkMode}>
+		<StyledProjects id='projects' $isDarkMode={darkMode}>
 		<h1>Mes projets</h1>
 		<StyledProjectGallery>
 		{projectsData.map(({ id,name, cover, title, skills }) =>

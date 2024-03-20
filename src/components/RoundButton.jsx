@@ -9,9 +9,10 @@ const StyledRoundButton = styled.div`
     cursor: pointer;
 	font-size: 3rem;
 	color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight};
-    z-index: 999;
+    z-index: 200;
     width: 50px;
     height: 50px;
+    max-height : 50%;
     text-align: center;
     transition: 0.2s ease;
     border-radius: 50%;

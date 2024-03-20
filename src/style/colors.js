@@ -10,12 +10,13 @@ const colors = {
   backgroundDark: '#212528',
 
   bodyLight: '#3c3e41',
-  bodyLightNotHover: '#c4cfde',
+  bodyLightNotHover: 'lightgrey',
 
   bodyDark: '#e6eaef',
-  bodyDarkNotHover: '#3c3e41',
+  bodyDarkNotHover: 'grey',
 
-
+  gradienPrimaryColor: 'linear-gradient(145deg, #239eba, #5cbdd4)',
+  // gradienPrimaryColor: 'linear-gradient(145deg, rgba(35,158,186,1) 0%, rgba(92,189,212,1) 70%);',
 
   gradientBoxDark: 'linear-gradient(145deg, #1e2024, #23272b)',
 
@@ -24,6 +25,9 @@ const colors = {
   boxShadowLight: '5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff',
 
   boxShadowDark: '10px 10px 19px #0d0e0f, -10px -10px 19px #262a2e',
+
+
+  inputBackgroungDark: '#191b1e',
 
    // boxShadowDark: 'inset 21px 21px 19px #181a1d, inset -21px -21px 19px #202225',
 

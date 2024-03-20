@@ -18,6 +18,9 @@ import linkedinDark from '../assets/images/logos/linkedin-dark.png';
 import githubDark from '../assets/images/logos/github-dark.png';
 import emailDark from '../assets/images/logos/email-dark.png';
 
+const LINKEDIN_URL = 'https://www.linkedin.com/in/mariaelisacoyos/';
+const GITHUB_URL = 'https://github.com/elisacoyos';
+
 const StyledAboutMe = styled.div`
 ${'' /* height: 500px; */}
 ${'' /* border: 1px solid pink; */}
@@ -31,6 +34,10 @@ width: 80%;
 max-width: 1440px;
 gap: 3rem;
 color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight};
+@media screen and (max-width: 1200px) {
+	flex-direction: column-reverse;
+	
+}
 `
 
 
@@ -85,7 +92,7 @@ const StyledPhoto = styled.div`
 
 	return (
 
-		<StyledAboutMe $isDarkMode={darkMode} >
+		<StyledAboutMe id='accueil' $isDarkMode={darkMode} >
 			<StyledInfos>
 				<div className='text'>
 					<p>Bienvenue sur mon Portfolio !</p>
@@ -101,9 +108,15 @@ const StyledPhoto = styled.div`
 					<div className="findMe">
 						<p>Ou me trouver ?</p>
 						<div className="badgeContainer">
-						    <SmallBadge logo={linkedin} logoDark={linkedinDark} hoverable />
-							<SmallBadge logo={github} logoDark={githubDark} hoverable />
-							<SmallBadge logo={email} logoDark={emailDark} hoverable />
+						<a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+								<SmallBadge logo={linkedin} logoDark={linkedinDark} hoverable />
+							</a>
+							<a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+								<SmallBadge logo={github} logoDark={githubDark} hoverable />
+							</a>
+							<a href="#contact" >
+								<SmallBadge logo={email} logoDark={emailDark} hoverable />
+							</a>
 						</div>
 					</div>
 
