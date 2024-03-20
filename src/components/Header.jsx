@@ -10,6 +10,7 @@ const StyledLogo = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin: 1rem 0;
 	gap: 1rem;
 	transition: 0.3s ease;
 	color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight};
@@ -32,7 +33,8 @@ const StyledHeader = styled.div`
 	&.header--scrolled {
         height: 60px;
         box-shadow: 10px 10px 19px rgba(0, 0, 0, 0.1);
-        
+		opacity: 0.9;
+		
         ${StyledLogo} {
             transform: scale(0.8);
         }
@@ -43,6 +45,7 @@ const StyledNav = styled.div`
 		display: flex;
 		align-items: center;
 		margin: 0 1rem;
+		
 		& ul {
 			display: flex;
 			gap: 1rem;
@@ -69,17 +72,17 @@ const StyledNav = styled.div`
 			padding: 10px;
 			background: ${({ $isDarkMode }) => $isDarkMode ? colors.gradientBoxDark : colors.gradientBoxLight};
 			box-shadow: ${({ $isDarkMode }) => $isDarkMode ? colors.boxShadowDark : colors.boxShadowLight};
-			font-weight: 500;
+
 			transition: 0.5s ease;
-			&:hover {
+			font-weight: 500;
+				&:hover {
 				color: ${colors.white};
 				background: ${colors.primary};
 				transform: translateY(-3px);
-			}
-		}
-		
-		
-`
+	}
+	}
+    `
+
 const StyledProfilePhoto = styled.img`
 	border: 3px solid lightgray;
 	display: flex;
