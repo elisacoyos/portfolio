@@ -7,16 +7,16 @@ import { useContext } from 'react';
 import { ThemeContext } from '../utils/context/ThemeProvider';
 
 import SmallBadge from './SmallBadge';
-import sassLogoColored from '../assets/images/svg/sass-colored.svg';
-import reactLogoColored from '../assets/images/svg/react-colored.svg';
-import cofeeCup from '../assets/images/svg/coffee-colored.svg';
-import linkedin from '../assets/images/svg/linkedin.png';
-import github from '../assets/images/svg/github.png';
-import email from '../assets/images/svg/email.png';
+import sassLogoColored from '../assets/images/logos/sass-color.png';
+import reactLogoColored from '../assets/images/logos/react-color.png';
+import cofeeCup from '../assets/images/logos/coffee-colored.svg';
+import linkedin from '../assets/images/logos/linkedin-light.png';
+import github from '../assets/images/logos/github-light.png';
+import email from '../assets/images/logos/email-light.png';
 
-import linkedinDark from '../assets/images/svg/linkedin-dark.png';
-import githubDark from '../assets/images/svg/github-dark.png';
-import emailDark from '../assets/images/svg/email-dark.png';
+import linkedinDark from '../assets/images/logos/linkedin-dark.png';
+import githubDark from '../assets/images/logos/github-dark.png';
+import emailDark from '../assets/images/logos/email-dark.png';
 
 const StyledAboutMe = styled.div`
 ${'' /* height: 500px; */}
@@ -28,6 +28,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 width: 80%;
+max-width: 1440px;
 gap: 3rem;
 color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight};
 `
@@ -38,7 +39,7 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 justify-content: space-between;
-height: 500px;
+${'' /* height: 500px; */}
 
 
 & p {
@@ -57,6 +58,10 @@ height: 500px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	width: 100%;
+	@media screen and (max-width: 1200px) {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
 	& .badgeContainer {
 		display: flex;
 		gap: 1.5rem;
@@ -74,7 +79,7 @@ const StyledPhoto = styled.div`
 	}
 	`
 
-export default function AboutMe(props) {
+	export default function AboutMe() {
 
 	const { darkMode } = useContext(ThemeContext);
 

@@ -73,7 +73,7 @@ const StyledNav = styled.div`
 			background: ${({ $isDarkMode }) => $isDarkMode ? colors.gradientBoxDark : colors.gradientBoxLight};
 			box-shadow: ${({ $isDarkMode }) => $isDarkMode ? colors.boxShadowDark : colors.boxShadowLight};
 
-			transition: 0.5s ease;
+			transition: 0.3s ease;
 			font-weight: 500;
 				&:hover {
 				color: ${colors.white};
