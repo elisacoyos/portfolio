@@ -65,8 +65,8 @@ const StyledLogo = styled.div`
 
 const StyledNavMobile = styled.div`
 
-	opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
-	display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};	
+opacity: ${({ $isMenuOpen }) => ($isMenuOpen ? '1' : '0')};
+	display: ${({ $isMenuOpen }) => ($isMenuOpen ? 'flex' : 'none')};	
 	
 	z-index: 3000;
 	position: fixed;
@@ -124,11 +124,11 @@ const StyledNavMobile = styled.div`
 
 
 
-export default function MobileMenu({ isOpen, onClose }) {
+export default function MobileMenu({ isMenuOpen, onClose, setIsMenuOpen }) {
 	const { darkMode } = useContext(ThemeContext);
 
 	return (
-		<StyledNavMobile $isDarkMode={darkMode} isOpen={isOpen}>
+		<StyledNavMobile $isDarkMode={darkMode} $isMenuOpen={isMenuOpen}>
 			<div className="menu">
 				<div className='mobileHeader'>
 					<StyledLogo $isDarkMode={darkMode} $inMobileNav>
@@ -137,9 +137,19 @@ export default function MobileMenu({ isOpen, onClose }) {
 						</div>
 						<h3 className='desktopTitle'>Kevin BRET</h3>
 					</StyledLogo>
+					<div className="close" onClick={() => {
+						onClose();
+						console.log("Closing menu...");
+						// setIsMenuOpen(false)
+					}}>
+						<RoundButton className="symbol" symbol="×" onClick={() => {
+							onClose();
+							console.log("Closing menu...");
+							// setIsMenuOpen(false)
+						}} />
+					</div>
 
 
-					<RoundButton className="symbol" symbol="×" onClick={onClose} />
 				</div>
 
 				<div className="separation"></div>
