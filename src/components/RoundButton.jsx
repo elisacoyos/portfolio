@@ -10,16 +10,18 @@ const StyledRoundButton = styled.div`
 	font-size: 3rem;
 	color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight};
     z-index: 200;
+	display: flex;
+	align-items: center;
+	justify-content: center;
     width: 50px;
     height: 50px;
-    max-height : 50%;
     text-align: center;
-    transition: 0.2s ease;
+	transition: 0.2s ease;
     border-radius: 50%;
 	background: ${({ $isDarkMode }) => $isDarkMode ? colors.gradientBoxDark : colors.gradientBoxLight};
     box-shadow: ${({ $isDarkMode }) => $isDarkMode ? colors.boxShadowDark : colors.boxShadowLight};
 	&:hover {
-        color: ${colors.primary};  
+        color: ${colors.primary};  // Choisissez la couleur que vous souhaitez pour l'effet de survol.
     }
 	
 `

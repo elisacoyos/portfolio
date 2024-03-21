@@ -5,11 +5,17 @@ const GlobalStyle = createGlobalStyle`
 
 ${'' /* import des polices */}
 
-${'' /* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap'); */}
+${'' /* @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap'); */}
 
 	html {
 		scroll-behavior: smooth;
 	}
+    
+	input, textarea:focus {
+		outline: none;
+		}
+
 	
 *,
 ::before,
@@ -20,6 +26,10 @@ ${'' /* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@40
     box-sizing: border-box;
     font-family: 'Montserrat';
     font-style: normal;
+    /* ? désactivation de la bordure au focus */
+    input:focus {
+    outline: none;
+    }
 }
     body {
         background-color: ${({ isDarkMode }) =>

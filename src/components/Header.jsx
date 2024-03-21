@@ -1,10 +1,19 @@
 import { useState, useEffect, useContext } from 'react';
-import profilePhoto from '../assets/images/profile_photo.png';
+
 import ToggleThemeButton from './ToggleThemeButton';
-import styled from 'styled-components';
-import colors from '../style/colors';
-import { ThemeContext } from '../utils/context/ThemeProvider';
 import RoundButton from './RoundButton';
+import DownloadCVButton from './DownloadCVButton';
+import Navigation from './Navigation';
+
+import colors from '../style/colors';
+
+import styled from 'styled-components';
+import { ThemeContext } from '../utils/context/ThemeProvider';
+
+import avatar from '../assets/images/avatar.webp';
+import burgerMenu from '../assets/images/burger-menu.png';
+
+import MobileMenu from './MobileMenu';
 
 
 const StyledLogo = styled.div`
@@ -12,10 +21,55 @@ const StyledLogo = styled.div`
 	align-items: center;
 	justify-content: center;
 	margin: 1rem 0;
+	margin-right: 2rem;
 	gap: 1rem;
 	transition: 0.3s ease;
 	color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight};
+	& h3 {
+		@media screen and (max-width: 1100px) {
+				display: none;
+			}
+	}
+	& .circle {
+		position: relative;
+		display: flex;
+		border: 2px solid lightgray;
+		width: 50px;
+		min-width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		padding: 3px;
+		object-fit: cover;	
+		background: ${({ $isDarkMode }) => $isDarkMode ? colors.gradientBoxDark : colors.gradientBoxLight};
+		box-shadow: ${({ $isDarkMode }) => $isDarkMode ? colors.boxShadowDark : colors.boxShadowLight};
+
+		& img {
+			@media screen and (max-width: 1100px) {
+				display: none;
+			}
+		}
+			
+		& .mobileTitle {
+			position: absolute;
+			left: calc(50% - 1rem);
+			top: calc(50% - 1rem);
+			display: none;
+			@media screen and (max-width: 1100px) {
+				display: flex;
+			}
+		}
+		
+	}
+	& h3 {
+	font-family: 'Permanent Marker', cursive;
+	font-size: 1.5rem;
+	line-height: 1.3;
+	}
+	&:hover {
+		color: ${colors.primary};
+	}
 `
+
 const StyledHeader = styled.div`
 	background-color: ${({ $isDarkMode }) => $isDarkMode ? colors.backgroundDark : colors.backgroundLight};
 	${'' /* border-bottom: 1px solid var(--color-lightgray); */}
@@ -30,6 +84,13 @@ const StyledHeader = styled.div`
 	z-index: 100;
 	height: 100px;
 	transition: 0.5s ease;
+	& .nav-cv {
+		align-items: center;
+		display: none;
+		@media screen and (min-width: 1000px) {
+				display: flex;
+			}
+	}
 	
 	&.header--scrolled {
         height: 60px;
@@ -42,58 +103,15 @@ const StyledHeader = styled.div`
     }
 `
 
-const StyledNav = styled.div`
-		display: flex;
-		align-items: center;
-		margin: 0 1rem;
-		
-		& ul {
-			display: flex;
-			gap: 1rem;
-			margin: 1rem;
-			color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight};
-			font-weight: 600;
-			transition: 0.5s ease;
-			&:hover {
-				color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDarkNotHover : colors.bodyLightNotHover};
-			}
-			& li {
-				cursor: pointer;
-				&:hover {
-					color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight};
-					transition: 0.5s ease;
-				}
-			}
-		}
-		& .cv {
-			cursor: pointer;
-			display: flex;
-			color: ${colors.primary};
-			border-radius: 6px;
-			padding: 10px;
-			background: ${({ $isDarkMode }) => $isDarkMode ? colors.gradientBoxDark : colors.gradientBoxLight};
-			box-shadow: ${({ $isDarkMode }) => $isDarkMode ? colors.boxShadowDark : colors.boxShadowLight};
-
-			transition: 0.3s ease;
-			font-weight: 500;
-				&:hover {
-				color: ${colors.white};
-				background: ${colors.primary};
-				background: ${colors.gradienPrimaryColor};
-	}
-	transform: translateY(-3px);
-	}
-    `
-
-const StyledProfilePhoto = styled.img`
-    border: 2px solid lightgray;
+const StyledBurgerMenu = styled.img`
 	display: flex;
-	width: 65px;
-	height: 65px;
-	border-radius: 50%;
-	object-fit: cover;	
-	background: ${({ $isDarkMode }) => $isDarkMode ? colors.gradientBoxDark : colors.gradientBoxLight};
-	box-shadow: ${({ $isDarkMode }) => $isDarkMode ? colors.boxShadowDark : colors.boxShadowLight};
+	align-items: center;
+	height: 50px;
+	width: 50px;
+	cursor: pointer;
+	@media screen and (min-width: 1000px) {
+		display: none;
+	}	
 `
 
 const StyledBacToTop = styled.div`
@@ -101,15 +119,6 @@ const StyledBacToTop = styled.div`
     bottom: 50px;
     right: 50px;
 	z-index: 200;
-    ${'' /* cursor: pointer;
-	font-size: 3rem;
-	color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight};
-    width: 50px;
-    height: 50px;
-    line-height: 46px;
-    border-radius: 50%;
-    text-align: center;
-	transition: 0.5s ease; */}
 	line-height: 46px;
 	border-radius: 50%;
 	visibility: hidden;
@@ -117,16 +126,18 @@ const StyledBacToTop = styled.div`
 	&.page--scrolled {
     opacity: 1;
     visibility: visible;
+	@media screen and (max-width: 900px) {
+		bottom: 20px;
+    	right: 20px;
+	}
 }
 `
 
-
 export default function Header() {
-
 	const { darkMode } = useContext(ThemeContext);
-
 	// est-ce que la page est scrollée ?
 	const [isScrolled, setIsScrolled] = useState(false);
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -146,51 +157,45 @@ export default function Header() {
 	}, []);
 
 	return (
-	
-<>
+		<div>
 
-<StyledHeader $isDarkMode={darkMode} className={isScrolled ? 'header--scrolled' : ''}>
-	<StyledLogo $isDarkMode={darkMode}>
-	<StyledProfilePhoto src={profilePhoto} alt="logo" $isDarkMode={darkMode} />
-		<h3>Elisa COYOS</h3>
-	</StyledLogo>
+			<StyledHeader $isDarkMode={darkMode} className={isScrolled ? 'header--scrolled' : ''}>
+				<StyledLogo $isDarkMode={darkMode}>
+					<div className="circle">
+						<img src={avatar} alt="logo" />
+						<h3 className='mobileTitle'>EC</h3>
+					</div>
+					<h3 className='desktopTitle'>Elisa COYOS</h3>
+				</StyledLogo>
 
-	<ToggleThemeButton />
+				<ToggleThemeButton />
 
-	<StyledNav $isDarkMode={darkMode}>
-	<ul className='header__nav'>
-						<li>
-						<a href="#accueil" >
-								Accueil
-							</a>
-						</li>
-						<li>
-						<a href="#skills" >
-								Skills
-							</a>
-						</li>
-						<li>
-						<a href="#projects">
-								Projets
-							</a>
-						</li>
-						<li>
-						<a href="#contact" >
-								Contact
-							</a>
-						</li>
-					</ul>
-					<div className="cv">Télécharger mon CV</div>
-				</StyledNav>
-	
-</StyledHeader>
+				<StyledBurgerMenu
+					src={burgerMenu}
+					alt="burgerMenu"
+					onClick={() => setIsMenuOpen(!isMenuOpen)}
+				/>
 
-<StyledBacToTop $isDarkMode={darkMode} className={isScrolled ? 'page--scrolled' : ''}>
-<a href="#accueil">
+				<div className='nav-cv'>
+					<Navigation $isDarkMode={darkMode} isMobile={false} />
+					<DownloadCVButton $isDarkMode={darkMode} />
+				</div>
+
+			</StyledHeader>
+
+			<MobileMenu
+				$isDarkMode={darkMode}
+				$isOpen={isMenuOpen}
+				onClose={() => setIsMenuOpen(false)}
+			/>
+
+			<StyledBacToTop $isDarkMode={darkMode} className={isScrolled ? 'page--scrolled' : ''}>
+
+				<a href="#accueil">
 					<RoundButton className="symbol" symbol="↑" />
 				</a>
 
-</StyledBacToTop>
-</>
-);
+			</StyledBacToTop>
+		</div>
+	);
 }
