@@ -7,7 +7,7 @@
 			"JavaScript,",
 			"React"
 		],
-		"origin": "Projet Réalisé dans le cadre de ma formation Développeur Web chez OpenClassrooms",
+		"origin": "Projet Réalisé dans le cadre de ma formation Integrateur Web chez OpenClassrooms",
 		"scenario": "Kasa vous recrute en tant que développeur front-end en freelance pour développer sa nouvelle plateforme web. Kasa est dans le métier de la location d’appartements entre particuliers depuis près de 10 ans maintenant. Avec plus de 500 annonces postées chaque jour, Kasa fait partie des leaders de la location d’appartements entre particuliers en France.",
 		"constraints": [
 			{
@@ -45,7 +45,7 @@
 			},
 			{
 				"name": "Maquette Figma Kasa",
-				"url": "https://drive.google.com/file/d/1xjCWjDWlpCX8mMYl0BITIKgkBINAz72d/view?usp=sharing"
+				"url": "https://www.figma.com/file/2BZEoBhyxt5IwZgRn0wGsL/Kasa_FR?type=design&node-id=0%3A1&mode=design&t=jDBEVSKaSM2kTRnd-1"
 			}
 		],
 		"cover": "https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/kasa/kasa-mockup.webp",
@@ -83,7 +83,7 @@
 			"JavaScript,",
 			"API"
 		],
-		"origin": "Projet Réalisé dans le cadre de ma formation Développeur Web chez OpenClassrooms",
+		"origin": "Projet Réalisé dans le cadre de ma formation Integrateur Web chez OpenClassrooms",
 		"scenario": "En simulation de travail en tant que de développeur front-end d'une entreprise de design, je développe ici la vitrine du site internet de Sophie Bluel, architecte.",
 		"constraints": [
 			{
@@ -143,42 +143,46 @@
 			"Css"
 		],
 		"origin": "Projet Réalisé dans le cadre de ma formation Integrateur Web chez OpenClassrooms",
-		"scenario": "L’entreprise BOOKI souhaite développer un site Internet qui permette aux usagers de trouver des hébergements et des activités dans la ville de leur choix. Vous êtes chargé d'intégrer l'interface du site avec du code HTML et CSS.",
+		"scenario": "J'ai intégré Ohmyfood en tant que développeur junior. C'est une jeune startup qui souhaite s'imposer sur le marché de la restauration. Déjà présente à New-York, elle veut désormais se faire une place à Paris. Ma mission est de développer un site 'mobile first' qui répertorie les menus de restaurants gastronomiques. En plus des systèmes classiques de réservation, les clients pourront composer le menu de leur repas pour que les plats soient prêts à leur arrivée.",
 		"constraints": [
 			{
 				"name": "Général",
 				"list": [
-					"Créer le contenu et la structure de la page d'accueil en HTML et CSS en respectant la maquette.",
-					"Rendre la page responsive pour desktop, tablette et mobile."
+					"Développer un site 'mobile first' et responsive pour Ohmyfood, permettant la personnalisation et la réservation de menus.",
+					"Utiliser SASS pour le style et intégrer des animations détaillées basées sur des maquettes spécifiques."
 				]
 			}
 		],
 		"links": [
 			{
-				"name": "Note de synthèse pour intégration du site Booki",
-				"url": "https://drive.google.com/file/d/1HZ_6JUhYh1kwtu7pCado-rHr8mNy9NN0/view?usp=sharing"
+				"name": "Brief créatif avec les informations clés",
+				"url": "https://course.oc-static.com/projects/D%C3%A9veloppeur+Web/IW_P4+Animations+CSS+Ohmyfood/Brief+creatif+site+Ohmyfood.pdf"
 			},
 			{
-				"name": "Maquette Figma Booki",
-				"url": "https://drive.google.com/file/d/10NUsLQ9ykxp2ZKVZyJgZ4ZwwK3bz_RFy/view?usp=sharing"
+				"name": "Maquette Figma OhMyFood",
+				"url": "https://www.figma.com/file/t4449fzDnwGYmzuwQdu87V/Maquettes-Ohmyfood-(mobile-et-desktop)?type=design&node-id=0-1&mode=design&t=5Ey3Yoif7yeLmQhx-0"
 			}
 		],
 		"cover": "https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-mockup.webp.webp",
 		"pictures": [
 			{
 				"desktopPictures": [
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/booki/booki-mockup.webp",
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/booki/booki-desktop.webp"
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-mockup.webp.webp",
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-desktop.webp"
 				]
 			},
 			{
 				"tabletPictures": [
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/booki/booki-tablet.webp"
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-desktop-1.webp"
 				]
 			},
 			{
 				"mobilePictures": [
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/booki/booki-mobile.webp"
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-mobile.webp",
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-menu-1.webp",
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-menu-2.webp",
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-menu-3.webp",
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-menu-4.webp"
 				]
 			}
 		],
@@ -194,7 +198,7 @@
 			"Debug,",
 			"Optimisation"
 		],
-		"origin": "Projet Réalisé dans le cadre de ma formation Développeur Web chez OpenClassrooms",
+		"origin": "Projet Réalisé dans le cadre de ma formation Integrateur Web chez OpenClassrooms",
 		"scenario": "Vous êtes développeur freelance, et vous décidez de proposer vos services d’optimisation SEO à pour le site de Nina Carducci, une photographe. Vous allez donc optimiser son site selon ses demandes indiquées dans son mail, et lui fournir un rapport détaillé de votre intervention.",
 		"constraints": [
 			{
@@ -235,7 +239,7 @@
 				"mobilePictures": []
 			}
 		],
-		"demo": "",
+		"demo": "https://elisacoyos.github.io/ninacarducci/",
 		"repo": "https://github.com/elisacoyos/ninacarducci"
 	}
 ]
