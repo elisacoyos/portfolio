@@ -77,7 +77,7 @@ opacity: ${({ $isMenuOpen }) => ($isMenuOpen ? '1' : '0')};
 	& .menu {
 		
 		padding: 0.5rem 1.5rem;
-		width: 350px;
+		${'' /* width: 350px; */}
 		height: 100%;
 		background-color: ${({ $isDarkMode }) => $isDarkMode ? colors.backgroundDark : colors.backgroundLight};
 		display: flex;
@@ -87,14 +87,17 @@ opacity: ${({ $isMenuOpen }) => ($isMenuOpen ? '1' : '0')};
 		& .mobileHeader {
 			${StyledLogo} {
 				& .circle img {
+					${'' /* height: 100%;
+				width: 100%; */}
 					@media screen and (max-width: 1100px) {
-						display: block; // Ou tout autre style que vous voulez appliquer
+						display: block; 
 					}
 				}
-			& h3 {
-				@media screen and (max-width: 1100px) {
-					display: block; // Ou tout autre style que vous voulez appliquer
-				}
+				& h3 {
+					@media screen and (max-width: 1100px) {
+						display: block; 
+						scale: 0.8;
+					}
 			}
 	}
 			display: flex;
@@ -105,6 +108,10 @@ opacity: ${({ $isMenuOpen }) => ($isMenuOpen ? '1' : '0')};
 				color: ${colors.primary};
 			}
 		}
+		
+		& .close {
+			scale: 0.8;
+		}
 		& .separation {
 			height: 1px;
 			width: 100%;
@@ -112,6 +119,7 @@ opacity: ${({ $isMenuOpen }) => ($isMenuOpen ? '1' : '0')};
 			background-color: lightgray;
 		}
 		& .links {
+			margin-top: 1rem;
 			transform-origin: top;
 			transform: scale(80%);
 			display: flex;
@@ -124,29 +132,34 @@ opacity: ${({ $isMenuOpen }) => ($isMenuOpen ? '1' : '0')};
 
 
 
-export default function MobileMenu({ isMenuOpen, onClose, setIsMenuOpen }) {
+export default function MobileMenu({ isMenuOpen, onClose }) {
 	const { darkMode } = useContext(ThemeContext);
+	// Cette fonction gère le clic à l'intérieur du menu mobile
+	const handleMenuClick = (event) => {
+		// Trouver le lien le plus proche de l'élément cliqué
+		let link = event.target.closest('a');
 
+		// Si un lien a été cliqué
+		if (link) {
+			onClose(); // Fermer le menu
+		}
+	};
 	return (
-		<StyledNavMobile $isDarkMode={darkMode} $isMenuOpen={isMenuOpen}>
-			<div className="menu">
+		<StyledNavMobile $isDarkMode={darkMode} $isMenuOpen={isMenuOpen} onClick={() => { onClose() }}>
+			<div className="menu" onClick={handleMenuClick} >
 				<div className='mobileHeader'>
 					<StyledLogo $isDarkMode={darkMode} $inMobileNav>
 						<div className="circle">
 							<img src={avatar} alt="logo"/>
 						</div>
-						<h3 className='desktopTitle'>Kevin BRET</h3>
+						<h3 className='desktopTitle'>elisa coyos</h3>
 					</StyledLogo>
 					<div className="close" onClick={() => {
 						onClose();
 						console.log("Closing menu...");
 						// setIsMenuOpen(false)
 					}}>
-						<RoundButton className="symbol" symbol="×" onClick={() => {
-							onClose();
-							console.log("Closing menu...");
-							// setIsMenuOpen(false)
-						}} />
+<RoundButton className="symbol" symbol="×" />
 					</div>
 
 
@@ -154,7 +167,11 @@ export default function MobileMenu({ isMenuOpen, onClose, setIsMenuOpen }) {
 
 				<div className="separation"></div>
 
-				<Navigation $isDarkMode={darkMode} isMobile={true} />
+				<Navigation $isDarkMode={darkMode} isMobile={true} onClick={() => {
+					onClose();
+					console.log("Closing menu...");
+					// setIsMenuOpen(false)
+				}} />
 
 				<div className="separation"></div>
 
