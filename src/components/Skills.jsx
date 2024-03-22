@@ -103,6 +103,8 @@ const StyledCard = styled.div`
         border-radius: 6px;
         background-color: ${colors.backgroundLight};
         color: ${colors.bodyLight};
+		${'' /* background: ${({ $isDarkMode }) => $isDarkMode ? colors.gradientBoxDark : colors.gradientBoxLight};
+	color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight}; */}
         transform: scaleY(0);
         transform-origin: top;  // Ce paramètre indique que le contenu s'étend à partir du haut
         transition: transform 0.3s ease;
@@ -144,9 +146,7 @@ function Skills() {
 	const [activeCards, setActiveCards] = useState({
 		frontend: false,
 		jsReact: false,
-		backendJs: false,
 		seoDebug: false,
-		learning: false
 	});
 
 	// Prend en argument l'identifiant de la carte

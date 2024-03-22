@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../utils/context/ThemeProvider';
+
 import styled from 'styled-components';
 import colors from '../style/colors';
 
@@ -16,7 +17,6 @@ const StyledProjects = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	
 	& h1 {
 		font-size: 2rem;
 		margin-bottom: 2rem;
@@ -33,27 +33,46 @@ const StyledProjectGallery = styled.div`
 `
 
 export default function Projects() {
+	
 	const { darkMode } = useContext(ThemeContext);
 
 	return (
 		<StyledProjects id='projects' $isDarkMode={darkMode}>
-		<h1>Mes projets</h1>
-		<StyledProjectGallery>
-		{projectsData.map(({ id,name, cover, title, skills }) =>
-			(
-				<ProjectCard key={id}
-					id={id}
-					name={name}
-					cover={cover}
-					title={title}
-					skills={skills}
-				/>
-			)
-			)}
+			<h1>Mes projets</h1>
+			<StyledProjectGallery>
+				{projectsData.map(({ 
+					id,
+					name, 
+					cover, 
+					pictures, 
+					title, 
+					skills, 
+					origin, 
+					scenario,
+					constraints,
+					links,
+					demo, 
+					repo }) =>
+				(
+					<ProjectCard key={id}
+						id={id}
+						name={name}
+						cover={cover}
+						pictures={pictures}
+						title={title}
+						skills={skills}
+						origin={origin}
+						scenario={scenario}
+						constraints={constraints}
+						links={links}
+						demo={demo}
+						repo={repo}
+					/>
+				)
+				)}
 
 
-		</StyledProjectGallery>
-
+			</StyledProjectGallery>
 		</StyledProjects>
 	);
 }

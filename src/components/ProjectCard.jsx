@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { useContext } from 'react';
 import { ThemeContext } from '../utils/context/ThemeProvider';
-// import RoundButton from './RoundButton'; 
+
+import ModaleContent from './ModaleContent';
+import { createPortal } from 'react-dom';
 
 import colors from '../style/colors';
 // import { ThemeContext } from '../utils/context/ThemeProvider';
@@ -10,7 +12,7 @@ import colors from '../style/colors';
 // import projectsData from '../assets/datas/projectsData.json';
 
 const StyledProjectCard = styled.div`
-    position: relative;
+	position: relative;
     width: 350px;
     height: auto;
 	display: flex;
@@ -30,6 +32,7 @@ const StyledProjectCard = styled.div`
 			& img {
 				transform: scale(1.1);
 			}
+			
 			& h2 {
 				color: ${colors.white};
 				transition: 0.3s ease;
@@ -44,13 +47,16 @@ const StyledProjectCard = styled.div`
 				visibility: visible;
 			}
 		}
+		&.title {
+			margin-bottom: 1.5rem
+		}
 	}
 	& .thumbnail {
 		height: 200px;
 		width: 100%;
 		overflow: hidden;
-        position: relative;
-        border-radius: 10px;
+		position: relative;
+		border-radius: 10px;
 		& img {
 			z-index: 0;
 			height: 200px;
@@ -74,6 +80,7 @@ const StyledProjectCard = styled.div`
 			top: 0;
 			border-radius: 10px 0 10px 0;
 			transform: translateY(-130%);
+
 		}
 		& .more {
 			bottom: 0;
@@ -82,12 +89,13 @@ const StyledProjectCard = styled.div`
 			transform: translateY(130%);
 		}
 	}
-    &:hover {
+	&:hover {
 		& .name {
 					transform: translateY(0%);
 				}
 				& .more {
 					transform: translateY(0%);
+
 				}
 		}
 		& .arrow {
@@ -103,6 +111,7 @@ const StyledSkillsContainer = styled.div`
 	justify-content: flex-start;
 	gap: 0.5rem;
 	color: ${colors.primary};
+
 `
 
 const StyledSkill = styled.div`
@@ -111,40 +120,67 @@ const StyledSkill = styled.div`
 
 const StyledNav = styled.div`
 	display: flex;
-    justify-content: space-around;
+	align-items: center;
+	position: absolute;
+	height: 2rem;
+	border-radius: 0px 0px 10px 10px;
+	bottom: 0;	
+	justify-content: space-around;
 	margin-top: 0.5rem;
 	width: 100%;
-	gap: 1rem;
+	${'' /* gap: 1rem; */}
 	font-size: 0.9rem;
 	color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight};
+	background: ${colors.primary};
 	transition: 0.3s ease;
-	&>div {
+	&>a {
 		${'' /* text-decoration: underline; */}
 		font-style: italic;
+		font-weight: bold;
 		transition: 0.3s ease;
+		color: ${colors.bodyDark};
 		&:hover {
-			text-decoration: none;
-			color: ${colors.primary};
+			text-decoration: underline;
 			transition: 0.3s ease;
 			& .arrow {
 				visibility: visible;
 			}
 		}
-	}
-	
+	}	
 `
 
-export default function ProjectCard({ id, title, cover, skills, name }) {
+
+export default function ProjectCard({ id, title, cover, pictures, skills, origin, scenario, constraints, links, name, repo, demo }) {
 
 	const { darkMode } = useContext(ThemeContext);
+
+	const [showModal, setShowModal] = React.useState(false);
 
 	return (
 		<StyledProjectCard $isDarkMode={darkMode}>
 
-			<div className="thumbnail">
-                <span className="name">{name}</span>
+			{showModal && createPortal(
+				<ModaleContent
+					title={title}
+					cover={cover}
+					pictures={pictures}
+					skills={skills}
+					origin={origin}
+					scenario={scenario}
+					constraints={constraints}
+					links={links}
+					name={name}
+					demo={demo}
+					repo={repo}
+					closeModal={() => setShowModal(false)} />,
+				document.body)}
+
+			<div
+				onClick={() => setShowModal(true)}
+				className="thumbnail">
+				<span className="name">{name}</span>
 				<img className='card__picture' src={cover} alt="" />
-                <span className="more">+ d'infos</span>
+				<span className="more">+ d'infos</span>
 			</div>
 
 			<StyledSkillsContainer>
@@ -155,12 +191,13 @@ export default function ProjectCard({ id, title, cover, skills, name }) {
 				))}
 			</StyledSkillsContainer>
 
-			<h3>{title} <span className="arrow">➚</span></h3>
+			<h3 className='title' onClick={() => { console.log(showModal); setShowModal(true) }}>{title} <span className="arrow">➚</span></h3>
 
 			<StyledNav $isDarkMode={darkMode} >
-				<div>Live Demo<span className="arrow"> ➚</span></div>
-				<div>Repo GitHub<span className="arrow"> ➚</span></div>
+				<a href={demo} target="_blank" rel="noopener noreferrer">Live Demo<span className="arrow"> ➚</span></a>
+				<a href={repo} target="_blank" rel="noopener noreferrer">Repo GitHub<span className="arrow"> ➚</span></a>
 			</StyledNav>
+
 		</StyledProjectCard>
 	);
 };
