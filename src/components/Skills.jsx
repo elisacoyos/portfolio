@@ -106,7 +106,7 @@ const StyledCard = styled.div`
         transform: scaleY(0);
         transform-origin: top;  // Ce paramètre indique que le contenu s'étend à partir du haut
         transition: transform 0.3s ease;
-        ${'' /* overflow: hidden; */}
+        box-shadow: ${colors.innerShadowDark};
 
         &.active {
 			visibility: visible;
@@ -114,6 +114,8 @@ const StyledCard = styled.div`
         }
         & ul li {
             margin-left: 1rem;
+			margin-bottom: 0.4rem;
+			font-size: 0.9rem;
             font-style: italic; 
             list-style: inherit;
             &:hover {
@@ -135,91 +137,91 @@ const StyledLogosContainer = styled.div`
 		}
 	`;
 
-function Skills({ LogoDark, LogoLight }) {
+function Skills() {
 	const { darkMode } = useContext(ThemeContext);
 
-	const [active, setActive] = useState(false);
+	// Initialiser le state avec un objet
+	const [activeCards, setActiveCards] = useState({
+		frontend: false,
+		jsReact: false,
+		backendJs: false,
+		seoDebug: false,
+		learning: false
+	});
 
-	const handleToggle = () => {
-		setActive(!active);
+	// Prend en argument l'identifiant de la carte
+	const handleToggle = (cardId) => {
+		setActiveCards(prevState => ({
+			...prevState,
+			[cardId]: !prevState[cardId]
+		}));
 	};
 
-	// const [isHovered, setIsHovered] = useState(false);
 
-	// let currentLogo;
-	// if (isHovered) {
-	// 	currentLogo = LogoDark;
-	// } else {
-	// 	currentLogo = darkMode && LogoDark ? LogoDark : LogoLight;
-	// }
 
 	return (
 		<StyledSkills id='skills' $isDarkMode={darkMode}>
 			<h1>Mes compétences</h1>
 
 			<StyledCardsContainer>
-				<StyledCard
-					className={`card ${active && 'active'}`}
-					$isDarkMode={darkMode}
-				// onMouseEnter={() => setIsHovered(true)}
-				// onMouseLeave={() => setIsHovered(false)}
-				>
+			
+				<StyledCard className={`card ${activeCards.frontend && 'active'}`} $isDarkMode={darkMode}>
 					<StyledLogosContainer className='logos'>
-						{/* logo html5 */}
-						{darkMode ? <img src={htmlLogoDark} alt="HTML" /> : <img src={htmlLogoLight} alt="HTML" />}
-						{/* logo css3 */}
-						{darkMode ? <img src={cssLogoDark} alt="CSS" /> : <img src={cssLogoLight} alt="CSS" />}
-						{/* logo sass */}
-						{darkMode ? <img src={sassLogoDark} alt="CSS" /> : <img src={sassLogoLight} alt="CSS" />}
+						<img src={darkMode ? htmlLogoDark : htmlLogoLight} alt="HTML" />
+						<img src={darkMode ? cssLogoDark : cssLogoLight} alt="CSS" />
+						<img src={darkMode ? sassLogoDark : sassLogoLight} alt="CSS" />
 					</StyledLogosContainer>
 					<h3>Intégration Front-end</h3>
-
-					<div className="moreContentBtn" onClick={handleToggle}>
-						<RoundButton symbol="+" />
+					<div className="moreContentBtn" onClick={() => handleToggle('frontend')}>
+						<RoundButton symbol={activeCards.frontend ? "-" : "+"} />
 					</div>
-
-					<div className={`content ${active && 'active'}`}>
+					<div className={`content ${activeCards.frontend && 'active'}`}>
 						<ul>
-							<li>Intégration de maquette</li>
-							<li>Responsive design</li>
-							<li>Utilisation de Sass</li>
+							<li>Intégrer du contenu conformément à une maquette,</li>
+							<li>Implémenter une interface responsive,</li>
+							<li>Utilisation des fonctionnalités Sass</li>
 						</ul>
 					</div>
 				</StyledCard>
 
-				<StyledCard
-					$isDarkMode={darkMode}
-				// onMouseEnter={() => setIsHovered(true)}
-				// onMouseLeave={() => setIsHovered(false)}
-				>
+				<StyledCard className={`card ${activeCards.jsReact && 'active'}`} $isDarkMode={darkMode}>
 					<StyledLogosContainer className='logos'>
-						{/* logo JS */}
-						{darkMode ? <img src={jsLogoDark} alt="JavaScript" /> : <img src={jsLogoLight} alt="JavaScript" />}
-						{/* logo React */}
-						{darkMode ? <img src={reactLogoDark} alt="HTML" /> : <img src={reactLogoLight} alt="HTML" />}
+						<img src={darkMode ? jsLogoDark : jsLogoLight} alt="JavaScript" />
+						<img src={darkMode ? reactLogoDark : reactLogoLight} alt="React" />
 					</StyledLogosContainer>
-					<h3>JavaScript & React Js</h3>
-					<div className="more">
-						<RoundButton symbol="+" />
+					<h3>JavaScript React Js</h3>
+					<div className="moreContentBtn" onClick={() => handleToggle('jsReact')}>
+						<RoundButton symbol={activeCards.jsReact ? "-" : "+"} />
+					</div>
+					<div className={`content ${activeCards.jsReact && 'active'}`}>
+						<ul>
+							<li>Manipuler les éléments du DOM,</li>
+							<li>Récupérer des données via des formulaires,</li>
+							<li>Gérer les évènements utilisateur,</li>
+							<li>Interagir avec des API externe,</li>
+							<li>Manipuler des données au format JSON</li>
+						</ul>
 					</div>
 				</StyledCard>
 
-				
+			
 
-				<StyledCard
-					$isDarkMode={darkMode}
-				// onMouseEnter={() => setIsHovered(true)}
-				// onMouseLeave={() => setIsHovered(false)}
-				>
+				<StyledCard className={`card ${activeCards.seoDebug && 'active'}`} $isDarkMode={darkMode}>
 					<StyledLogosContainer className='logos'>
-						{/* logo Seo */}
-						{darkMode ? <img src={seoLogoDark} alt="JavaScript" /> : <img src={seoLogoLight} alt="JavaScript" />}
-						{/* logo Debug */}
-						{darkMode ? <img src={debugLogoDark} alt="HTML" /> : <img src={debugLogoLight} alt="HTML" />}
+						<img src={darkMode ? seoLogoDark : seoLogoLight} alt="JavaScript" />
+						<img src={darkMode ? debugLogoDark : debugLogoLight} alt="React" />
 					</StyledLogosContainer>
 					<h3>SEO Optimisation Debug</h3>
-					<div className="more">
-						<RoundButton symbol="+" />
+					<div className="moreContentBtn" onClick={() => handleToggle('seoDebug')}>
+						<RoundButton symbol={activeCards.seoDebug ? "-" : "+"} />
+					</div>
+					<div className={`content ${activeCards.seoDebug && 'active'}`}>
+						<ul>
+							<li>Optimiser les performances d’un site web,</li>
+							<li>Débugger un site web grâce aux Chrome DevTools,</li>
+							<li>Optimisation du référencement naturel d'un site web,</li>
+							<li>Rédiger un cahier de recette pour tester un site</li>
+						</ul>
 					</div>
 				</StyledCard>
 
