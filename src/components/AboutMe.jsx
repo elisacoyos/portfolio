@@ -9,7 +9,7 @@ import { ThemeContext } from '../utils/context/ThemeProvider';
 
 
 import FindMe from './FindMe';
-import BestSkill from './BestSkill';
+
 
 const StyledAboutMe = styled.div`
 ${'' /* height: 500px; */}
@@ -103,7 +103,7 @@ const StyledPhoto = styled.div`
 					
 
 				<FindMe />
-					<BestSkill />
+					
 
 				</div>
 			</StyledInfos>

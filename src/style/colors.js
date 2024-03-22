@@ -1,6 +1,6 @@
 const colors = {
      // color-primary: #ff014f,
-  primary: '#239eba',
+  primary: '#e2725b',   // #e2725b es terracota, naranja quemado:#cc5500//original era: #239eba
   secondary: '#f4f5f6',
   tertiary: '#0d1013',
   gray: '#f6f6f6',
@@ -15,7 +15,7 @@ const colors = {
   bodyDark: '#e6eaef',
   bodyDarkNotHover: 'grey',
 
-  gradienPrimaryColor: 'linear-gradient(145deg, #239eba, #5cbdd4)',
+  gradienPrimaryColor: 'linear-gradient(145deg, #e2725b, #f5f5dc )',
   // gradienPrimaryColor: 'linear-gradient(145deg, rgba(35,158,186,1) 0%, rgba(92,189,212,1) 70%);',
 
   gradientBoxDark: 'linear-gradient(145deg, #1e2024, #23272b)',
