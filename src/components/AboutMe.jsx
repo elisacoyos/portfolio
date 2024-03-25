@@ -15,7 +15,7 @@ const StyledAboutMe = styled.div`
 ${'' /* height: 500px; */}
 ${'' /* border: 1px solid pink; */}
 
-padding-top: 120px;
+padding-top: 140px;
 margin:  0 Auto;
 display: flex;
 align-items: center;
@@ -43,7 +43,10 @@ ${'' /* height: 500px; */}
 
 & p {
 	margin: 1rem 0;
-	font-size: 1.2rem;
+	font-style: inherit;
+	}
+	& .welcome {
+		font-size: 1.3rem;
 }
 & .title {
 	font-size: 2rem;
@@ -51,6 +54,11 @@ ${'' /* height: 500px; */}
 	& .myName {
 		color: ${colors.primary};
 	}
+}
+& #myDescription {
+	font-size: 1.1rem; ! important;
+	line-height: 1.5;
+	font-style: italic;
 }
 
 & .badges {
@@ -92,14 +100,19 @@ const StyledPhoto = styled.div`
 		<StyledAboutMe id='accueil' $isDarkMode={darkMode} >
 			<StyledInfos>
 				<div className='text'>
-					<p>Bienvenue sur mon Portfolio !</p>
+				<p className='welcome'>Bienvenue sur mon Portfolio !</p>
 					<h1 className='title'>
 						Bonjour, je suis
 						<span className='myName'> Elisa COYOS</span>,
 						<br />
 						<span className='title-cation'>Integrateur Web</span>
 					</h1>
-					<p>Passionné d'informatique depuis toujours, particulièrement par le développent Front-end</p>
+					<div id='myDescription'>
+
+					<p>Je suis passionné en développement web. J'ai suivi la formation Integrateur web d'openClassrooms. J'ai des compétences en HTML, CSS, JavaScript, ainsi que React. N'hésitez pas à explorer mes réalisations ci-dessous et à me contacter si vous êtes intéressés par mon profil.</p>
+
+						
+					</div>
 				</div>
 				<div className='badges'>
 					

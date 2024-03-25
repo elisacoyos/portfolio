@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import colors from '../style/colors';
-import avatar from '../assets/images/avatar.webp';
 import RoundButton from './RoundButton';
 import Navigation from './Navigation';
 import FindMe from './FindMe';
@@ -80,7 +79,7 @@ pointer-events: ${({ $isMenuOpen }) => ($isMenuOpen ? 'auto' : 'none')};
 		transition: transform 0.5s ease; 
 		position: fixed;
 		right: 0;
-		padding: 0.5rem 1.5rem;
+		padding: 0.5rem 0.5rem;
 		height: 100%;
 		background-color: ${({ $isDarkMode }) => $isDarkMode ? colors.backgroundDark : colors.backgroundLight};
 		display: flex;
@@ -113,7 +112,7 @@ pointer-events: ${({ $isMenuOpen }) => ($isMenuOpen ? 'auto' : 'none')};
 		}
 		
 		& .close {
-			scale: 0.8;
+			scale: 0.7;
 		}
 		& .separation {
 			height: 1px;
@@ -152,9 +151,9 @@ export default function MobileMenu({ isMenuOpen, onClose }) {
 			<div className="menu" onClick={handleMenuClick} >
 				<div className='mobileHeader'>
 					<StyledLogo $isDarkMode={darkMode} $inMobileNav>
-						<div className="circle">
+						{/* <div className="circle">
 							<img src={avatar} alt="logo"/>
-						</div>
+					</div> */}
 						<h3 className='desktopTitle'>elisa coyos</h3>
 					</StyledLogo>
 					<div className="close" onClick={() => {

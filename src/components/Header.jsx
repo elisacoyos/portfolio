@@ -83,7 +83,7 @@ const StyledHeader = styled.div`
 	position: fixed;
 	left: 0;
 	top: 0;
-	z-index: 100;
+	z-index: 50;
 	height: 100px;
 	transition: 0.5s ease;
 	& .nav-cv {
@@ -120,7 +120,7 @@ const StyledBacToTop = styled.div`
 	position: fixed;
     bottom: 50px;
     right: 50px;
-	z-index: 200;
+	z-index: 50;
 	line-height: 46px;
 	border-radius: 50%;
 	visibility: hidden;
@@ -129,6 +129,7 @@ const StyledBacToTop = styled.div`
     opacity: 1;
     visibility: visible;
 	@media screen and (max-width: 900px) {
+		transform: scale(0.8);
 		bottom: 20px;
     	right: 20px;
 	}
@@ -168,7 +169,7 @@ export default function Header() {
 						<img src={avatar} alt="logo" />
 						<h3 className='mobileTitle'>EC</h3>
 					</div>
-					<h3 className='desktopTitle'>Elisa COYOS</h3>
+					<h3 className='desktopTitle'>elisa coyos</h3>
 				</StyledLogo>
 
 				<ToggleThemeButton />
