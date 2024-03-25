@@ -21,11 +21,11 @@ transition: 0.3s ease;
 font-weight: 500;
 &:hover {
     color: ${colors.white};
-    background: ${colors.primary};
     
     background: ${colors.gradienPrimaryColor};
-    }
+    
     transform: translateY(-3px);
+}
 `;
 
 export default function DownloadCVButton() {

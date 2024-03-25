@@ -58,7 +58,7 @@ const { darkMode, toggleTheme } = useContext(ThemeContext);
 return (
     <FormControlLabel
         onClick={toggleTheme}
-        control={<MaterialUISwitch sx={{ m: 1 }} checked={darkMode} />}
+        control={<MaterialUISwitch id="themeSwitch" sx={{ m: 1 }} checked={darkMode} />}
         label=""
     />
 );

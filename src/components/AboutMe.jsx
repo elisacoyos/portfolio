@@ -22,9 +22,11 @@ align-items: center;
 justify-content: center;
 width: 80%;
 max-width: 1440px;
+height: 100vh;
 gap: 3rem;
 color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight};
 @media screen and (max-width: 1100px) {
+	height: auto;
 	flex-direction: column-reverse;
 	
 }
@@ -75,10 +77,10 @@ const StyledPhoto = styled.div`
 		margin: 0 1rem;
 		
 	}
-	${'' /* @media screen and (max-width: 900px) {
+	@media screen and (max-width: 768px) {
 		height: 300px;
 		
-	} */}
+	} 
 	`
 
 	export default function AboutMe() {
@@ -97,7 +99,7 @@ const StyledPhoto = styled.div`
 						<br />
 						<span className='title-cation'>Integrateur Web</span>
 					</h1>
-					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae eum autem omnis ex, aliquam labore unde quo illum voluptatibus quibusdam facere neque saepe vitae odio iusto debitis vel magni nisi.</p>
+					<p>Passionné d'informatique depuis toujours, particulièrement par le développent Front-end</p>
 				</div>
 				<div className='badges'>
 					

@@ -16,6 +16,7 @@ import burgerMenu from '../assets/images/burger-menu.png';
 import MobileMenu from './MobileMenu';
 
 
+
 const StyledLogo = styled.div`
 	display: flex;
 	align-items: center;
@@ -24,7 +25,8 @@ const StyledLogo = styled.div`
 	margin-right: 2rem;
 	gap: 1rem;
 	transition: 0.3s ease;
-	color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight};
+	${'' /* color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight}; */}
+	color: ${colors.primary};
 	& h3 {
 		@media screen and (max-width: 1100px) {
 				display: none;
@@ -136,8 +138,9 @@ const StyledBacToTop = styled.div`
 export default function Header() {
 	const { darkMode } = useContext(ThemeContext);
 	// est-ce que la page est scrollée ?
-	const [isScrolled, setIsScrolled] = useState(false);
+	
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [isScrolled, setIsScrolled] = useState(false);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -170,18 +173,22 @@ export default function Header() {
 
 				<ToggleThemeButton />
 
+				
+
+
+
 				<StyledBurgerMenu
 					src={burgerMenu}
 					alt="burgerMenu"
 					onClick={() => {
 						setIsMenuOpen(true)
 					// console.log("Menu opened ...");
-					}} 
-					// onClose={() => setIsMenuOpen(false)}
+						}}
+				// onClose={() => setIsMenuOpen(false)}
 				/>
 
 				<div className='nav-cv'>
-					<Navigation $isDarkMode={darkMode} isMobile={false} />
+				    <Navigation isMobile={false} />
 					<DownloadCVButton $isDarkMode={darkMode} />
 				</div>
 
