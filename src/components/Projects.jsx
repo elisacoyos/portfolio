@@ -19,7 +19,7 @@ const StyledProjects = styled.div`
 	justify-content: center;
 	& h1 {
 		font-size: 2rem;
-		margin-bottom: 2rem;
+		margin-bottom: 3rem;
 		color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight};
 	}
 `
@@ -29,7 +29,11 @@ const StyledProjectGallery = styled.div`
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	gap: 2rem;
+	gap: 4rem;
+	@media (min-width: 1000px) {
+		width: 90%;
+		height: 90%;
+	}
 `
 
 export default function Projects() {

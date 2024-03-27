@@ -16,7 +16,7 @@ const StyledSkills = styled.div`
 	justify-content: center;
 	& h1 {
 		font-size: 2rem;
-		margin-bottom: 2rem;
+		margin-bottom: 3rem;
 		color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight};
 	}
 	& .parcour {
@@ -29,7 +29,7 @@ const StyledCardsContainer = styled.div`
 	flex-wrap: wrap;
 	align-items: flex-start;
 	justify-content: center;
-	gap: 2rem;
+	gap: 3rem;
 `;
 
 const StyledCard = styled.div`

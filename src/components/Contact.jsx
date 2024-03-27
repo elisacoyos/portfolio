@@ -3,7 +3,9 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import emailjs from '@emailjs/browser';
+
 import { ThemeContext } from '../utils/context/ThemeProvider';
+
 import styled from 'styled-components';
 import colors from '../style/colors';
 
@@ -13,22 +15,21 @@ import SmallBadge from './SmallBadge';
 
 import linkedin from '../assets/images/logos/linkedin-light.png';
 import github from '../assets/images/logos/github-light.png';
-// import email from '../assets/images/logos/email-light.png';
 
 import linkedinDark from '../assets/images/logos/linkedin-dark.png';
 import githubDark from '../assets/images/logos/github-dark.png';
-// import emailDark from '../assets/images/logos/email-dark.png';
 
 const LINKEDIN_URL = 'https://www.linkedin.com/in/mariaelisacoyos/';
 const GITHUB_URL = 'https://github.com/elisacoyos';
-// const MAIL_TO_ELISA = 'elisacoyosdev@gmail.com'
+// const MAIL_TO_ELISA = 'elisacoyosdev@gmail.com';
 
 
 
 
 
 const StyledContact = styled.div`
-margin: 2rem auto;
+
+	margin: 2rem auto;
 	padding-top: 120px;
 	width: 80%;
 	max-width: 1440px;
@@ -38,19 +39,19 @@ margin: 2rem auto;
 	justify-content: center;
 	color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight};
 	@media screen and (max-width: 1000px) {
-		flex-direction: column;
-		width: 100%;
-		${'' /* gap: 0.5rem; */}
-	}
+			flex-direction: column;
+			width: 100%;
+			${'' /* gap: 0.5rem; */}
+		}
 	& h1 {
 		font-size: 2rem;
 		margin-bottom: 2rem;
 		${'' /* color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight}; */}
 	}
 `
-
 const StyledContainer = styled.div`
-${'' /* border: 1px solid red; */}
+	${'' /* border: 1px solid red; */}
+
 	display: flex;
 	flex-direction: row;
 	${'' /* align-items: center;   */}
@@ -58,10 +59,10 @@ ${'' /* border: 1px solid red; */}
 	gap: 2rem;
 	${'' /* height: auto; */}
 	@media screen and (max-width: 1000px) {
-		flex-direction: column;
-		width: 90%;
-		${'' /* gap: 0.5rem; */}
-	}
+			flex-direction: column;
+			width: 90%;
+			${'' /* gap: 0.5rem; */}
+		}
 	
 `
 
@@ -80,8 +81,8 @@ const StyledInfos = styled.div`
     box-shadow: ${({ $isDarkMode }) => $isDarkMode ? colors.boxShadowDark : colors.boxShadowLight};
 	transition: 0.3s ease;
 	@media screen and (max-width: 1000px) {
-		width: 100%;
-	}
+				width: 100%;
+			}
 	& .thumbnail {
 		height: 200px;
 		width: 100%;
@@ -108,6 +109,7 @@ const StyledInfos = styled.div`
 				transform: scale(1.2);
 			}
 	}
+
 `
 
 const StyledForm = styled.div`
@@ -124,18 +126,17 @@ const StyledForm = styled.div`
     box-shadow: ${({ $isDarkMode }) => $isDarkMode ? colors.boxShadowDark : colors.boxShadowLight};
 	transition: 0.3s ease;
 	@media screen and (max-width: 1000px) {
-		width: 100%;
-	}
+				width: 100%;
+			}
 	& form {
 		display: flex;
 		flex-direction: column;
-		
 			& div {
 			display: flex;
 			flex-direction: column;
 			width: 100%;
 			margin: 0.5rem 0;
-			& input, textarea {	
+			& input, textarea {
 				border-radius: 6px;
 				height: 55px;
 				transition: var(--transition);
@@ -144,7 +145,6 @@ const StyledForm = styled.div`
 				font-size: 1rem;
 				background-color: ${({ $isDarkMode }) => $isDarkMode ? colors.inputBackgroungDark : colors.white};
 				color: ${({ $isDarkMode }) => $isDarkMode ? colors.bodyDark : colors.bodyLight};
-				box-shadow: var(--inner-shadow);
 				border: ${({ $isDarkMode }) => $isDarkMode ? "2px solid #191b1e" : "2px solid #DADADA"};
 				box-shadow: ${({ $isDarkMode }) => $isDarkMode ? colors.innerShadowDark : ""};
 				letter-spacing: 1px;
@@ -179,6 +179,7 @@ const StyledForm = styled.div`
 				}
 			}
 		
+		
 		& .name-and-phone {
 			display: flex;
 			flex-direction: row;
@@ -191,8 +192,10 @@ const StyledForm = styled.div`
 		}
 		
 	}
-	`
-	const StyledMessageConfirm = styled.div`
+	
+`
+
+const StyledMessageConfirm = styled.div`
 	position: fixed;
 	display: flex;
 	align-items: center;
@@ -206,7 +209,7 @@ const StyledForm = styled.div`
 	visibility: ${({ $isVisible }) => $isVisible ? "visible" : "hidden"};
 `
 
-	export default function Contact() {
+export default function Contact() {
 	const { darkMode } = useContext(ThemeContext);
 	const [showConfirmation, setShowConfirmation] = useState(false);
 
@@ -231,15 +234,14 @@ const StyledForm = styled.div`
 
 	const {
 		register,
-		formState: { errors },
 		handleSubmit,
 	} = useForm({
 		resolver: yupResolver(schema),
 	});
 
 	const onSubmit = (data, r) => {
-		const templateId = 'template_j0cnalf';
-		const serviceId = 'service_f7rh05t';
+		const templateId = 'template_ml8ecb9';
+		const serviceId = 'service_9q8z3dv';
 		sendFeedback(serviceId, templateId, {
 			name: data.name,
 			phone: data.phone,
@@ -253,7 +255,7 @@ const StyledForm = styled.div`
 
 	const sendFeedback = (serviceId, templateId, variables) => {
 		emailjs
-			.send(serviceId, templateId, variables, 'wc_4xMk0QFiCKWjXx')
+			.send(serviceId, templateId, variables, 'Z-bE_lEiQD0CSwsB4')
 			.then((res) => {
 				console.log('succes');
 			})
@@ -270,56 +272,58 @@ const StyledForm = styled.div`
 		}
 	}, [showConfirmation]);
 
+
 	return (
 		<StyledContact id='contact' $isDarkMode={darkMode} >
-		<h1>Me contacter</h1>
-		<StyledContainer>
+			<h1>Me contacter</h1>
+			<StyledContainer>
 
-			<StyledInfos $isDarkMode={darkMode}>
-				<div className="thumbnail">
-					<img className='picture' src={handshake} alt="" />
-				</div>
-
-				<h3>Elisa COYOS</h3>
-				<p>Integrateur Web</p>
-				<p>Je suis actuellement disponible, en recherche d'un poste de développeur front-end dans une équipe ..</p>
-				<p>Téléphone : <span>06 03 97 11 35</span></p>
-				<p>Email : <span>elisacoyosdev@gmail.com</span></p>
-
-				<div className="findMe">
-					<p>Ou me trouver ?</p>
-					<div className="badgeContainer">
-						<a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
-							<SmallBadge logo={linkedin} logoDark={linkedinDark} hoverable />
-						</a>
-						<a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
-							<SmallBadge logo={github} logoDark={githubDark} hoverable />
-						</a>
-												{/* <a href={MAIL_TO_KEVIN} >
-							<SmallBadge logo={email} logoDark={emailDark} hoverable />
-						</a> */}
+				<StyledInfos $isDarkMode={darkMode}>
+					<div className="thumbnail">
+						<img className='picture' src={handshake} alt="" />
 					</div>
-				</div>
-			</StyledInfos>
 
-			<StyledForm $isDarkMode={darkMode}>
-				<form className='contact-form' onSubmit={handleSubmit(onSubmit)}>
-				<div className="name-and-phone">
-				<div className="name-container">
+					<h3>Elisa COYOS</h3>
+					<p>Integrateur Web</p>
+					{/* <p>Je suis actuellement disponible, en recherche d'un poste de développeur front-end dans une équipe ..</p> */}
+					<p>Téléphone : <span>06 03 97 11 35</span></p>
+					<p>Email : <span>elisacoyosdev@gmail.com</span></p>
+
+					<div className="findMe">
+						<p>Ou me trouver ?</p>
+						<div className="badgeContainer">
+							<a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+								<SmallBadge logo={linkedin} logoDark={linkedinDark} hoverable />
+							</a>
+							<a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+								<SmallBadge logo={github} logoDark={githubDark} hoverable />
+							</a>
+							{/* <a href={MAIL_TO_ELISA} >
+								<SmallBadge logo={email} logoDark={emailDark} hoverable />
+							</a> */}
+						</div>
+					</div>
+				</StyledInfos>
+
+				<StyledForm $isDarkMode={darkMode}>
+					<form className='contact-form' onSubmit={handleSubmit(onSubmit)}>
+
+						<div className="name-and-phone">
+							<div className="name-container">
 								<label htmlFor="name">Votre nom</label>
 								<input type="text" id="name" name='name' autoComplete='on' {...register('name')} />
 								<span></span>
 							</div>
 
 							<div className="phone-container">
-								<label htmlFor="phone">N° de téléphone</label>								
+								<label htmlFor="phone">N° de téléphone</label>
 								<input type="text" id="phone" name='phone' autoComplete='on' {...register('phone')} />
 								<span></span>
 							</div>
 						</div>
 
 						<div className="email-container">
-						<label htmlFor="email">Email</label>
+							<label htmlFor="email">Email</label>
 							<input type="email" id="email" name='email' autoComplete='on' {...register('email')} />
 							<span></span>
 						</div>
@@ -335,13 +339,15 @@ const StyledForm = styled.div`
 							<input type="submit" id="submit" name='submit' value="Envoyer" />
 							<span></span>
 						</div>
-				</form>
-			</StyledForm>
+					</form>
 
-		</StyledContainer>
-		<StyledMessageConfirm id='message-confirm' $isVisible={showConfirmation} >
-				{showConfirmation && <div className='send-'>Votre message bien a été envoyé !</div>}
+				</StyledForm>
+
+			</StyledContainer>
+
+			<StyledMessageConfirm id='message-confirm' $isVisible={showConfirmation} >
+				{showConfirmation && <div className='send-'>Votre message a été envoyé !</div>}
 			</StyledMessageConfirm>
-	</StyledContact>
-	)
+		</StyledContact>
+	);
 }
