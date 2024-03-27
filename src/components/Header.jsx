@@ -40,12 +40,13 @@ const StyledLogo = styled.div`
 		min-width: 50px;
 		height: 50px;
 		border-radius: 50%;
-		padding: 3px;
-		object-fit: cover;	
 		background: ${({ $isDarkMode }) => $isDarkMode ? colors.gradientBoxDark : colors.gradientBoxLight};
 		box-shadow: ${({ $isDarkMode }) => $isDarkMode ? colors.boxShadowDark : colors.boxShadowLight};
 
 		& img {
+			width: 100%;
+            height: 100%;
+            object-fit: cover;
 			@media screen and (max-width: 1100px) {
 				display: none;
 			}
