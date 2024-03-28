@@ -221,7 +221,10 @@ export default function ModaleContent({ closeModal, cover, pictures, mobilePictu
 					<RoundButton className="symbol" symbol="×" />
 				</div>
                 <StyledNav $isDarkMode={darkMode} >
-					<a href={demo} target="_blank" rel="noopener noreferrer">Live Demo<span className="arrow"> ➚</span></a>
+					 {/* Se añadió una condición para renderizar el enlace del demo solo si existe */}
+					 {demo && <a href={demo} target="_blank" rel="noopener noreferrer">Live Demo<span className="arrow"> ➚</span></a>}
+                {/* Se agregó un div de separación solo si existe un enlace de demo */}
+                {demo && <div className="separation"></div>}
 					<a href={repo} target="_blank" rel="noopener noreferrer">Repo GitHub<span className="arrow"> ➚</span></a>
 				</StyledNav>
 

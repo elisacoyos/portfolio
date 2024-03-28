@@ -109,8 +109,8 @@ const StyledHeader = styled.div`
 const StyledBurgerMenu = styled.img`
 	display: flex;
 	align-items: center;
-	height: 50px;
-	width: 50px;
+	height: 2.5rem;
+    width: 2.5rem;
 	cursor: pointer;
 	@media screen and (min-width: 1000px) {
 		display: none;

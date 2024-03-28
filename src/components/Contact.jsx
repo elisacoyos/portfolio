@@ -96,6 +96,7 @@ const StyledInfos = styled.div`
 			object-fit: cover;
 			transition: 0.6s ease;
 			${'' /* display: none; */}
+			
 		}
 	}
 	& .badgeContainer {

@@ -195,9 +195,7 @@ const StyledLogosContainer = styled.div`
 
 			</StyledCardsContainer>
 
-			{/* <h3 className='parcour'>Mon parcour & expérience</h3>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis sit laboriosam voluptatibus ut nemo qui voluptates placeat eveniet impedit dignissimos earum aut officia voluptas quae commodi quidem cum pariatur odit, aspernatur, praesentium, iure esse inventore nobis. Dolore quaerat facilis iste amet. Porro perferendis temporibus vel ipsum molestiae reiciendis neque exercitationem?</p> */}
-
+			
 		</StyledSkills>
 	);
 }

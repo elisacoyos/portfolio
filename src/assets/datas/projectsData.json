@@ -1,4 +1,121 @@
-[
+[    	
+	{
+	"id": "1",
+	"name": "OhMyFood",
+	"title": "Améliorez l'interface d'un site mobile avec des animations CSS",
+	"skills": [
+		"Html,",
+		"Css"
+	],
+	"origin": "Projet Réalisé dans le cadre de ma formation Integrateur Web chez OpenClassrooms",
+	"scenario": "J'ai intégré Ohmyfood en tant que développeur junior. C'est une jeune startup qui souhaite s'imposer sur le marché de la restauration. Déjà présente à New-York, elle veut désormais se faire une place à Paris. Ma mission est de développer un site 'mobile first' qui répertorie les menus de restaurants gastronomiques. En plus des systèmes classiques de réservation, les clients pourront composer le menu de leur repas pour que les plats soient prêts à leur arrivée.",
+	"constraints": [
+		{
+			"name": "Général",
+			"list": [
+				"Développer un site 'mobile first' et responsive pour Ohmyfood, permettant la personnalisation et la réservation de menus.",
+				"Utiliser SASS pour le style et intégrer des animations détaillées basées sur des maquettes spécifiques."
+			]
+		}
+	],
+	"links": [
+		{
+			"name": "Brief créatif avec les informations clés",
+			"url": "https://course.oc-static.com/projects/D%C3%A9veloppeur+Web/IW_P4+Animations+CSS+Ohmyfood/Brief+creatif+site+Ohmyfood.pdf"
+		},
+		{
+			"name": "Maquette Figma OhMyFood",
+			"url": "https://www.figma.com/file/t4449fzDnwGYmzuwQdu87V/Maquettes-Ohmyfood-(mobile-et-desktop)?type=design&node-id=0-1&mode=design&t=5Ey3Yoif7yeLmQhx-0"
+		}
+	],
+	"cover": "https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-mockup.webp",
+	"pictures": [
+		{
+			"desktopPictures": [
+				"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-mockup.webp",
+				"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-desktop.webp"
+			]
+		},
+		{
+			"tabletPictures": [
+				"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-desktop-1.webp"
+			]
+		},
+		{
+			"mobilePictures": [
+				"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-mobile.webp",
+				"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-menu-1.webp",
+				"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-menu-2.webp",
+				"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-menu-3.webp",
+				"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-menu-4.webp"
+			]
+		}
+	],
+	"demo": "https://elisacoyos.github.io/ohmyfood/",
+	"repo": "https://github.com/elisacoyos/ohmyfood"
+    
+    },
+	{
+		"id": "2",
+		"name": "Sophie Bluel",
+		"title": "Créez le portfolio d'une architecte avec JavaScript",
+		"skills": [
+			"HTML,",
+			"CSS,",
+			"JavaScript,",
+			"API"
+		],
+		"origin": "Projet Réalisé dans le cadre de ma formation Integrateur Web chez OpenClassrooms",
+		"scenario": "En simulation de travail en tant que de développeur front-end d'une entreprise de design, je développe ici la vitrine du site internet de Sophie Bluel, architecte.",
+		"constraints": [
+			{
+				"name": "HTML & CSS",
+				"list": [
+					"Créer la page de présentation des travaux de l'architecte à partir du HTML fourni",
+					"Créer la page de connexion de l'administrateur du site (code à créer de zéro)",
+					"Créer la modale permettant d'uploader de nouveaux médias (code à créer de zéro)."
+				]
+			},
+			{
+				"name": "JavaScript & API",
+				"list": [
+					"Faire appel aux API mises à ma dispostion pour :",
+					"Récupérer les catégories,",
+					"Récupérer les photos à afficher dans la galerie,",
+					"La connexion de l'administrateur du site,",
+					"La création et la suppression de projet photo."
+				]
+			}
+		],
+		"links": [
+			{
+				"name": "Maquette Figma Sophie Bluel",
+				"url": "https://www.figma.com/file/kfKHknHySoTibZfdolGAX6/Sophie-Bluel---Desktop?type=design&node-id=0-1&mode=design&t=UIwP3CWUC0sIcu4Z-0"
+			}
+		],
+		"cover": "https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/bluel/Sophie-bluel-Mockup.webp",
+		"pictures": [
+			{
+				"desktopPictures": [
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/bluel/Sophie-bluel-Mockup.webp",
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/bluel/Sophie-Bluel-desktop-1.webp",
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/bluel/Sophie-Bluel-desktop-2.webp",
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/bluel/Sophie-Bluel-desktop-3.webp",
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/bluel/Sophie-Bluel-desktop-4.webp",
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/bluel/Sophie-Bluel-desktop-5.webp",
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/bluel/Sophie-Bluel-desktop-6.webp"
+				]
+			},
+			{
+				"tabletPictures": []
+			},
+			{
+				"mobilePictures": []
+			}
+		],
+		"demo": "",
+		"repo": "https://github.com/elisacoyos/Portfolio-architecte-sophie-bluel"
+	},
 	{
 		"id": "3",
 		"name": "Kasa",
@@ -74,122 +191,6 @@
 		"repo": "https://github.com/elisacoyos/kasa"
 	},
 	{
-		"id": "2",
-		"name": "Sophie Bluel",
-		"title": "Créez le portfolio d'une architecte avec JavaScript",
-		"skills": [
-			"HTML,",
-			"CSS,",
-			"JavaScript,",
-			"API"
-		],
-		"origin": "Projet Réalisé dans le cadre de ma formation Integrateur Web chez OpenClassrooms",
-		"scenario": "En simulation de travail en tant que de développeur front-end d'une entreprise de design, je développe ici la vitrine du site internet de Sophie Bluel, architecte.",
-		"constraints": [
-			{
-				"name": "HTML & CSS",
-				"list": [
-					"Créer la page de présentation des travaux de l'architecte à partir du HTML fourni",
-					"Créer la page de connexion de l'administrateur du site (code à créer de zéro)",
-					"Créer la modale permettant d'uploader de nouveaux médias (code à créer de zéro)."
-				]
-			},
-			{
-				"name": "JavaScript & API",
-				"list": [
-					"Faire appel aux API mises à ma dispostion pour :",
-					"Récupérer les catégories,",
-					"Récupérer les photos à afficher dans la galerie,",
-					"La connexion de l'administrateur du site,",
-					"La création et la suppression de projet photo."
-				]
-			}
-		],
-		"links": [
-			{
-				"name": "Maquette Figma Sophie Bluel",
-				"url": "https://www.figma.com/file/kfKHknHySoTibZfdolGAX6/Sophie-Bluel---Desktop?type=design&node-id=0-1&mode=design&t=UIwP3CWUC0sIcu4Z-0"
-			}
-		],
-		"cover": "https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/bluel/Sophie-bluel-Mockup.webp",
-		"pictures": [
-			{
-				"desktopPictures": [
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/bluel/Sophie-bluel-Mockup.webp",
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/bluel/Sophie-Bluel-desktop-1.webp",
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/bluel/Sophie-Bluel-desktop-2.webp",
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/bluel/Sophie-Bluel-desktop-3.webp",
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/bluel/Sophie-Bluel-desktop-4.webp",
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/bluel/Sophie-Bluel-desktop-5.webp",
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/bluel/Sophie-Bluel-desktop-6.webp"
-				]
-			},
-			{
-				"tabletPictures": []
-			},
-			{
-				"mobilePictures": []
-			}
-		],
-		"demo": "",
-		"repo": "https://github.com/elisacoyos/Portfolio-architecte-sophie-bluel"
-	},
-	{
-		"id": "1",
-		"name": "OhMyFood",
-		"title": "Améliorez l'interface d'un site mobile avec des animations CSS",
-		"skills": [
-			"Html,",
-			"Css"
-		],
-		"origin": "Projet Réalisé dans le cadre de ma formation Integrateur Web chez OpenClassrooms",
-		"scenario": "J'ai intégré Ohmyfood en tant que développeur junior. C'est une jeune startup qui souhaite s'imposer sur le marché de la restauration. Déjà présente à New-York, elle veut désormais se faire une place à Paris. Ma mission est de développer un site 'mobile first' qui répertorie les menus de restaurants gastronomiques. En plus des systèmes classiques de réservation, les clients pourront composer le menu de leur repas pour que les plats soient prêts à leur arrivée.",
-		"constraints": [
-			{
-				"name": "Général",
-				"list": [
-					"Développer un site 'mobile first' et responsive pour Ohmyfood, permettant la personnalisation et la réservation de menus.",
-					"Utiliser SASS pour le style et intégrer des animations détaillées basées sur des maquettes spécifiques."
-				]
-			}
-		],
-		"links": [
-			{
-				"name": "Brief créatif avec les informations clés",
-				"url": "https://course.oc-static.com/projects/D%C3%A9veloppeur+Web/IW_P4+Animations+CSS+Ohmyfood/Brief+creatif+site+Ohmyfood.pdf"
-			},
-			{
-				"name": "Maquette Figma OhMyFood",
-				"url": "https://www.figma.com/file/t4449fzDnwGYmzuwQdu87V/Maquettes-Ohmyfood-(mobile-et-desktop)?type=design&node-id=0-1&mode=design&t=5Ey3Yoif7yeLmQhx-0"
-			}
-		],
-		"cover": "https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-mockup.webp.webp",
-		"pictures": [
-			{
-				"desktopPictures": [
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-mockup.webp.webp",
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-desktop.webp"
-				]
-			},
-			{
-				"tabletPictures": [
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-desktop-1.webp"
-				]
-			},
-			{
-				"mobilePictures": [
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-mobile.webp",
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-menu-1.webp",
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-menu-2.webp",
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-menu-3.webp",
-					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/ohmyfood/ohmyfood-menu-4.webp"
-				]
-			}
-		],
-		"demo": "https://elisacoyos.github.io/ohmyfood/",
-		"repo": "https://github.com/elisacoyos/ohmyfood"
-	},
-	{
 		"id": "4",
 		"name": "Nina Carducci",
 		"title": "Débuggez et optimisez un site de photographe",
@@ -241,5 +242,57 @@
 		],
 		"demo": "https://elisacoyos.github.io/ninacarducci/",
 		"repo": "https://github.com/elisacoyos/ninacarducci"
+	},
+	{
+		"id": "5",
+		"name": "Booki",
+		"title": "Créez la page d'accueil d'une agence de voyage",
+		"skills": [
+			"Html,",
+			"Css"
+		],
+		"origin": "Projet Réalisé dans le cadre de ma formation Développeur Web chez OpenClassrooms",
+		"scenario": "L’entreprise BOOKI souhaite développer un site Internet qui permette aux usagers de trouver des hébergements et des activités dans la ville de leur choix. Vous êtes chargé d'intégrer l'interface du site avec du code HTML et CSS.",
+		"constraints": [
+			{
+				"name": "Général",
+				"list": [
+					"Créer le contenu et la structure de la page d'accueil en HTML et CSS en respectant la maquette.",
+					"Rendre la page responsive pour desktop, tablette et mobile."
+				]
+			}
+		],
+		"links": [
+			{
+				"name": "Note de synthèse pour intégration du site Booki",
+				"url": "https://drive.google.com/file/d/1HZ_6JUhYh1kwtu7pCado-rHr8mNy9NN0/view?usp=sharing"
+			},
+			{
+				"name": "Maquette Figma Booki",
+				"url": "https://drive.google.com/file/d/10NUsLQ9ykxp2ZKVZyJgZ4ZwwK3bz_RFy/view?usp=sharing"
+			}
+		],
+		"cover": "https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/booki/booki-mockup.webp",
+		"pictures": [
+			{
+				"desktopPictures": [
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/booki/booki-mockup.webp",
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/booki/booki-desktop.webp"
+				]
+			},
+			{
+				"tabletPictures": [
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/booki/booki-tablet.webp"
+				]
+			},
+			{
+				"mobilePictures": [
+					"https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/booki/booki-mobile.webp"
+				]
+			}
+		],
+		"demo": "https://elisacoyos.github.io/Booki/",
+		"repo": "https://github.com/elisacoyos/Booki"
 	}
+
 ]
