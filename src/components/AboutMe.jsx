@@ -109,7 +109,8 @@ const StyledPhoto = styled.div`
 					</h1>
 					<div id='myDescription'>
 
-					<p>Je suis passionné en développement web. J'ai suivi la formation Integrateur web d'openClassrooms. J'ai des compétences en HTML, CSS, JavaScript, ainsi que React. N'hésitez pas à explorer mes réalisations ci-dessous et à me contacter si vous êtes intéressés par mon profil.</p>
+					<p>Passionné par le développement web, j'ai suivi avec enthousiasme la formation d'Intégrateur Web proposée par OpenClassrooms. Maîtrisant les langages HTML, CSS, JavaScript ainsi que React, j'ai consolidé mes compétences au fil de cette expérience.<br /><br />
+						 Je vous invite à découvrir mes réalisations ci-dessous et je reste disponible pour toute opportunité ou collaboration intéressante. N'hésitez pas à me contacter pour en discuter davantage.</p>
 
 						
 					</div>

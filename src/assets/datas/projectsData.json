@@ -187,7 +187,7 @@
 				]
 			}
 		],
-		"demo": "",
+		"demo": "https://elisacoyos.github.io/kasa/",
 		"repo": "https://github.com/elisacoyos/kasa"
 	},
 	{
@@ -265,11 +265,11 @@
 		"links": [
 			{
 				"name": "Note de synthèse pour intégration du site Booki",
-				"url": "https://drive.google.com/file/d/1HZ_6JUhYh1kwtu7pCado-rHr8mNy9NN0/view?usp=sharing"
+				"url": "https://course.oc-static.com/projects/D%C3%A9veloppeur+Web/DWP_P3+HTML+CSS+Booki/DWP+Booki+-+Note+de+synthese.pdf"
 			},
 			{
 				"name": "Maquette Figma Booki",
-				"url": "https://drive.google.com/file/d/10NUsLQ9ykxp2ZKVZyJgZ4ZwwK3bz_RFy/view?usp=sharing"
+				"url": "https://www.figma.com/file/B3eLowtWREc9YXzBcGRAHn/Maquettes-Booki?type=design&node-id=3-0&mode=design&t=WHDFRoPpU2XLEgxw-0"
 			}
 		],
 		"cover": "https://elisacoyos.github.io/MY_PICTURES/images/portfolio/projects/booki/booki-mockup.webp",

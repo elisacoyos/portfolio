@@ -199,11 +199,13 @@ export default function ProjectCard({ id, title, cover, pictures, skills, origin
             <h3 className='title' onClick={() => setShowModal(true)}>{title} <span className="arrow">➚</span></h3>
 
             <StyledNav $isDarkMode={darkMode} >
-                {/* Se añadió una condición para renderizar el enlace del demo solo si existe */}
-                {demo && <a href={demo} target="_blank" rel="noopener noreferrer">Live Demo<span className="arrow"> ➚</span></a>}
-                {/* Se agregó un div de separación solo si existe un enlace de demo */}
-                {demo && <div className="separation"></div>}
-                <a href={repo} target="_blank" rel="noopener noreferrer">Repo GitHub<span className="arrow"> ➚</span></a>
+            {demo ? (
+  <>
+    <a href={demo} target="_blank" rel="noopener noreferrer">Live Demo<span className="arrow"> ➚</span></a>
+    <div className="separation"></div>
+  </>
+) : null}
+<a href={repo} target="_blank" rel="noopener noreferrer">Repo GitHub<span className="arrow"> ➚</span></a>
             </StyledNav>
         </StyledProjectCard>
     );

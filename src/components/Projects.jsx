@@ -27,7 +27,6 @@ const StyledProjects = styled.div`
 const StyledProjectGallery = styled.div`
 	display: flex;
 	flex-wrap: wrap;
-	align-items: center;
 	justify-content: center;
 	gap: 4rem;
 	@media (min-width: 1000px) {
