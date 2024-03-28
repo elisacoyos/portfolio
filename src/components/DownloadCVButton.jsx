@@ -32,7 +32,7 @@ const StyledButton = styled.a`
 
 export default function DownloadCVButton() {
     const { darkMode } = useContext(ThemeContext);
-    const cvLink = "/CV_Elisa_COYOS.pdf";
+    const cvLink = "CV_Elisa_COYOS.pdf";
 return (
     <StyledButton
       $isDarkMode={darkMode}
